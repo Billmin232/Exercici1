@@ -8,17 +8,16 @@ v = []
 x = []
 w = []
 
-
-for l in range(a):
+for i in range(a):
     x.append(random.uniform(0, 1))
-    w.append(random.randint(1, 10))
+    w.append(random.uniform(0, 1))
 
 for i in range(a):
-    v[i] = x[i] * w[i]
+    v.append(x[i] * w[i])
 
-for j in v:
-    z = z + j
+for i in v:
+    z = z + i
 
-print(z)
-s = 1/(1 + e ** -z)
-print(s)
+s: float = 1 / (1 + e ** -z)
+
+print("El valor es", s)
