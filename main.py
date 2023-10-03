@@ -8,6 +8,7 @@ v = []
 x = []
 w = []
 
+
 for l in range(a):
     x.append(random.uniform(0, 1))
     w.append(random.randint(1, 10))
