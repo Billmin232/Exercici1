@@ -1,12 +1,12 @@
 class Neurona:
-    def __init__(self, imputs):
+    def __init__(self, inputs):
         self.z = 0
         self.e = 2.71828182846
-        self.nimp = len(imputs)
-        self.imputs = imputs
+        self.nimp = len(inputs)
+        self.imputs = inputs
         self.pesos = [1] * self.nimp
 
-    def calcular(self):
+    def Calcular(self):
         v = []
         self.pesos = [1] * self.nimp
 
@@ -16,31 +16,32 @@ class Neurona:
         for i in v:
             self.z = self.z + i
 
-        result = self.sigmoide(self.z)
+        result = self.sigmoid(self.z)
         return result
 
-    def sigmoide(self, z):
+    def sigmoid(self, z):
         a = 1 / (1 + self.e ** -(z + 1))
         return a
 
-Entradas1 = [0,1]
+
+Entradas1 = [0, 1]
 n1 = Neurona(Entradas1)
-res1 = n1.calcular()
+res1 = n1.Calcular()
 
 n2 = Neurona(Entradas1)
-res2 = n2.calcular()
+res2 = n2.Calcular()
 
 n3 = Neurona(Entradas1)
-res3 = n3.calcular()
+res3 = n3.Calcular()
 
 Entradas2 = [res1, res2, res3]
 n4 = Neurona(Entradas2)
-res4 = n4.calcular()
+res4 = n4.Calcular()
 res4 = f"{res4:.3f}"
 
 n5 = Neurona(Entradas2)
-res5 = n5.calcular()
+res5 = n5.Calcular()
 res5 = f"{res5:.3f}"
 
-resultados = [res4, res5]
-print(resultados)
+Resultados = [res4, res5]
+print(Resultados)
