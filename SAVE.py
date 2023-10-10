@@ -1,10 +1,10 @@
 class Neurona:
-    def __init__(self, inputs, pesos):
+    def __init__(self, inputs):
         self.z = 0
         self.e = 2.71828182846
         self.nimp = len(inputs)
         self.imputs = inputs
-        self.pesos = pesos
+        self.pesos = [1] * self.nimp
 
     def Calcular(self):
         v = []
@@ -25,22 +25,18 @@ class Neurona:
 
 
 Entradas1 = [0, 1]
-Pesos = [1] * 12
-n1 = Neurona(Entradas1, Pesos)
+n1 = Neurona(Entradas1)
 res1 = n1.Calcular()
 
-n2 = Neurona(Entradas1, Pesos)
+n2 = Neurona(Entradas1)
 res2 = n2.Calcular()
 
-n3 = Neurona(Entradas1, Pesos)
+n3 = Neurona(Entradas1)
 res3 = n3.Calcular()
 
 Entradas2 = [res1, res2, res3]
-n4 = Neurona(Entradas2, Pesos)
+n4 = Neurona(Entradas2)
 res4 = n4.Calcular()
 
-n5 = Neurona(Entradas2, Pesos)
+n5 = Neurona(Entradas2)
 res5 = n5.Calcular()
-
-Salida = [1, 0]
-Err2 = res4 - Salida[0]
