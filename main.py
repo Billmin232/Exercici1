@@ -19,7 +19,7 @@ class Neurona:
         for i in v:
             self.z = self.z + i
 
-
+        self.z[0] = self.z[0] + self.bias[self.fila]
         result = self.sigmoid(self.z)
         return result
 
@@ -27,7 +27,7 @@ class Neurona:
         return self.z
 
     def sigmoid(self, z):
-        a = (1 / (1 + self.e ** -(z + self.bias[self.fila])))
+        a = (1 / (1 + np.exp(-z)))
         return a
 
 
@@ -53,7 +53,7 @@ Bias1 = np.array([[1],
 Bias2 = np.array([[1],
                   [1]])
 
-while flag != 10000:
+while flag != 1000:
     n1 = Neurona(Entradas1, W1, Bias1, 0)
     a1 = n1.Calcular()
     z1[0] = n1.LOL()
@@ -84,7 +84,7 @@ while flag != 10000:
     W2 = W2 - LR * (np.dot(-Err2, np.transpose(Entradas2)))
     Bias2 = Bias2 - LR * -Err2
 
-    Err1 = np.matmul((np.dot(np.transpose(W2), -Err2)), (Entradas2 * (1 - Entradas2)))
+    Err1 = (np.dot(np.transpose(W2), -Err2)) * (Entradas2 * (1 - Entradas2))
     W1 = W1 - LR * np.dot(Err1, np.transpose(Entradas1))
     Bias1 = Bias1 - LR * Err1
 
