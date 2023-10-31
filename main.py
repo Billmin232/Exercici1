@@ -30,7 +30,6 @@ class Neurona:
         a = (1 / (1 + np.exp(-z)))
         return a
 
-
 flag = 0
 LR = 0.25
 
