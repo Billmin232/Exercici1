@@ -33,6 +33,8 @@ class Neurona:
 
 flag = 0
 LR = 0.25
+
+#Para probar la 3a parte de la practica pon la x1 i x2 en Entradas1
 Entradas1 = np.array([[1],
                       [1]])
 z1 = np.array([[0],
